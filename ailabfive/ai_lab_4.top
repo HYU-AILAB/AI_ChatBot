@@ -1,0 +1,89 @@
+outputmacro: ^asking_keep_print()
+{
+	if(%rand > 30)
+	{
+		^join([계속][남은 정보도]) [들을 준비 되셨나요][말씀드릴까요][말씀드려도 될까요][알려드릴까요][알려드려도 될까요]?
+	}
+	else
+	{
+		[다 확인하셨나요?][전부 확인하셨나요?][잘 따라오고 계신가요?]
+	}
+}
+
+outputmacro: ^asking_keep_email()
+{
+	^join () 다른 연구원의 [이메일][메일][e-mail] 주소도 [알려드릴까요][궁금하신가요]?
+}
+
+outputmacro: ^asking_keep_research()
+{
+	^join () 다른 연구원의 [연구 분야][research interest]도 [알려드릴까요][궁금하신가요]?
+}
+
+Topic: ~AILAB_member  keep repeat [ ~member ~전화번호 ~멤버 ~이름 ~연구 ~이메일 ~과정 ~박사 ~석사 ~교수 ]
+
+# u:( ) $topic_used_AILAB_member = 1
+
+# searching one member's information
+
+u: SEARCH_ONE_WHO(<<_~member ~who>>)
+	^reuse(~Member_Info.course_who)
+
+u: SEARCH_ONE_AGE(<<_~member ~나이>>) 이걸 알려주면 연구원들이 저를 싫어할거에요. 저는 홈페이지에 있는 정보만 알려드릴 수 있어요.
+
+u: SEARCH_ONE_NUMBER(<<_~member ~전화번호>>)
+	^reuse(~Member_Info.phone_one)
+
+u: SEARCH_ONE_EMAIL(<<_~member ~이메일>>)
+	^reuse(~Member_Info.email_one)
+
+u: SEARCH_ONE_COURSE(<<_~member [연구분야 "연구 분야" 관심분야 "관심 분야" 분야]>>)
+	^reuse(~Member_Info.research_one)
+
+u: SEARCH_ONE_COURSE(<<_~member ~과정>>)
+	^reuse(~Member_Info.course_one)
+
+u: SEARCH_ONE_PROJECT(<<_~member ~프로젝트>>)
+	^reuse(~Member_Info.project_one)
+
+u: SEARCH_WHO_PROFESSOR(<<~교수 ~who>>) 우리 AILAB의 지도교수님은 최용석 교수님 입니다.
+u: (<<~석사 {~who}>>) 석사과정에는 한연지, 엄희송, 유재창, 김병조, 김지성, 서상우, 송지수, 조충현, 김유리, 정지은, 박소영 [학생이][연구원이] 있습니다.
+u: (<<~박사 {~who}>>) 박사과정에는 장두수, 조건희, 김건 [학생이][연구원이] 있습니다.
+
+# u: (<< ~조수필 ~who !~전화번호 !~이름 !~연구 !~이메일 !~과정 !~박사 !~석사 !~교수>>) 랩실에서 런한 친구에요^^
+
+u: (~박사 * ["몇 명" 몇명 몇명* "몇 명이"])
+[저희 연구실에는 3명의 박사과정 학생이 있어요.][박사과정은 3명 있습니다.][3명의 박사과정이 있어요.]
+
+u: (~석사 * ["몇 명" 몇명 몇명* "몇 명이"])
+[저희 연구실에는 12명의 석사과정 학생이 있어요.][석사과정은 12명 있습니다.][12명의 석사과정이 있어요.]
+
+u: (~교수 * ["몇 명" 몇명 몇명* "몇 명이" 몇명이])
+[저희 연구실에는 1명의 교수님이 계십니다.][교수님은 1명 계십니다.]
+
+u: MEMBERCOUNT([~멤버 ~연구실] * ["몇 명" 몇명 몇명* "몇 명이"])
+[저희][본] ^join([인공지능][AI]) 연구실에는 [3명의 박사과정, 12명의 석사과정 그리고 1분의 교수님이][박사과정 3명, 석사과정 12명 그리고 교수님 1분이] ^join([소속되어][]) ^join([있습니다][있어요][있답니다]).
+
+# simple introducing about members
+
+u: memberinfo(!~전화번호 !~이메일 !~연구 !과정* <<{~누구 ~askingmode} ~멤버>> ) [저희][본] ^join([인공지능][AI]) 연구실의 모든 ^join([구성원][멤버]^join([들][])[이][에 대해][에 대해서][에 대하여]) 알고 ^join(싶으[세요][신가요][신 건가요][신 거죠])?
+	a: ([박사 박사*]) ^reuse(doctor1)
+	a: ([석사 석사*]) ^reuse(master1)
+	a: ([교수 교수*]) ^reuse(professor1)
+
+	a: (~긍정) ^reuse(MEMBERCOUNT) [저는][] ^join([저희 연구실][본 연구실][]) [구성원][멤버]들의 이름[과][,] 이메일, 연구분야, 과정에 대해[서][] ^join([말씀][알려][설명]) 드릴 수 ^join(있[어요][습니다]). [어떤 게 궁금하신가요][궁금한 게 있으신가요][무엇을 알려드릴까요][알고 싶은 게 있으신가요]?
+	a: (~부정) [그럼][그러면][그렇다면] ^join([누구를][무엇을][누구에 대해][무엇에 대해]) 알고 싶으[신가요][세요][신 건가요]?
+			# u: (~member) ^reuse(SEARCH_ONE_PER)
+
+	u: (<<!~member ~who>>) 어떤 연구원의 정보를 알고싶으신가요?
+		a: (<<_~member ~who>>) ^reuse(~Member_Info.course_who)
+		a: (_~member) ^reuse(~Member_Info.course_who)
+	u: (<<!~member ~이메일>>) 어떤 연구원의 이메일 정보를 알고싶으신가요?
+		a: (<<_~member ~이메일>>) ^reuse(~Member_Info.email_one)
+		a: (_~member) ^reuse(~Member_Info.email_one)
+	u: (<<!~member [연구분야 "연구 분야" 관심분야 "관심 분야" 분야]>>) 어떤 연구원의 연구분야를 알고싶으신가요?
+		a: (<<_~member [연구분야 "연구 분야" 관심분야 "관심 분야" 분야]>>) ^reuse(~Member_Info.research_one)
+		a: (_~member) ^reuse(~Member_Info.research_one)
+	u: (<<!~member ~과정>>) 어떤 연구원의 과정을 알고싶으신가요?
+		a: (<<_~member ~과정>>) ^reuse(~Member_Info.course_one)
+		a: (_~member) ^reuse(~Member_Info.course_one)

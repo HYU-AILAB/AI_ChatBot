@@ -1,0 +1,340 @@
+concept: ~긍정 [ㅇ ㅇㅇ 응 응응 웅 맞아 좋아 맞는데요 맞을껄요 맞을걸요 그래 네 넵 넹 맞아요 맞습니다 yes 좋아 좋아요 좋네]
+concept: ~부정 [ㄴ ㄴㄴ 아니 아뇨 아냐 아닌데요 아닐껄요 아닐걸요 아니요 아니오 아닌데 노 놉 아닙니다 아니에요 괜찮아 no]
+
+concept: ~학생분야 [nlp vision ontology]
+concept: ~nlp [ NLP nlp 자연어 자연어처리 "자연어 처리" "natural language processing"]
+concept: ~vision [ vision 비전 비젼 Vision ]
+concept: ~ontology [ ontology Ontology 온톨로지 ]
+
+concept: ~전화번호[ 전화번호 전화 번호 휴대폰 ]
+concept: ~이메일 [ 이메일 메일 email 이메일주소 "이메일 주소" ]
+concept: ~나이 [ 나이 몇살 "몇 살" 몇년생 "몇 년생" age ]
+
+concept: ~날씨 [ 날씨 오늘날씨 weather ]
+concept: ~기분 [ 기분 ]
+
+concept: ~프로젝트 [ 프로젝트 프로잭트 project ]
+concept: ~공지사항 [ 공지 공지사항 뉴스 소식 ]
+concept: ~논문 [ 논문 출간물 저널 컨퍼런스 학회 학회지 publication ]
+concept: ~해외 [ 해외 국외 국제 영어 international ]
+concept: ~국내 [ 국내 자국 우리나라 한글 domestic ]
+concept: ~연구실 [ 연구실 랩 laboratory ]
+concept: ~연구 [ 연구 연구분야 분야 ]
+concept: ~연구분야 [ ~인공지능 정보검색 "정보 검색" 융합 ]
+concept: ~인공지능[ "인공 지능" 인공지능 a.i AI ]
+concept: ~askingmode [ 뭐 뭐야 뭐였어 어떤 어떻게 어디에 어디 소개 소개해 물어봐도 말해 말해줄 알려 알려주세요 알려줄래 알려줄래 알려줘 알고 알고싶어 설명 설명해 설명해줘 있니 있어 뭐가있어 냈어 어때 ]
+concept: ~입학 [ 입학 입사 모집 입학정보 ]
+concept: ~우대 [ 우대 우대조건 입학우대 입학우대조건 "입학 우대" ]
+concept: ~멤버 [ 멤버 구성원 사람 멤버정보 연구원 ]
+concept: ~교수 [ 교수 교수님 ]
+concept: ~과정 [ ~박사 ~석사 ]
+concept: ~박사 [ 박사 박사과정 박사들 박사과정들 박사 ]
+concept: ~석사 [ 석사 석사과정 석사들 석사과정들 석사 ]
+concept: ~이름 [ 이름 ]
+concept: ~위치 [ 위치 호수 건물 위치가 어디 어디에 "어떻게 가" 가는길 "가는 길" "가는 방법" ]
+concept: ~who [ 누구 누가 누굴 누구누구 ]
+concept: ~웹 [ 웹 웹페이지 홈페이지 사이트 ]
+
+concept: ~년도 [ 2017 2018 2019 ]
+
+concept: ~시간_단위 [ ~년 ~개월 2017 2018 2019]
+concept: ~이천십칠 [2017 2017년 2017년에 2017년도에 2017년도 제작년]
+concept: ~이천십팔 [2018 2018년 2018년에 2018년도에 2018년도 작년]
+concept: ~이천십구 [2019 2019년 2019년에 2019년도에 2019년도 올해 "올 해" 이번년도 "이번 년도"]
+concept: ~최근 [ ~년 ~개월 ]
+concept: ~년 [ ~일년 ~이년 ]
+concept: ~일년 [ 년 해 일년 "일 년" 1년 "1 년" 한해 "한 해"]
+concept: ~이년 [ 이년 "이 년" 2년 "2 년" 두해 "두 해"]
+concept: ~삼년 [ 삼년 "삼 년" 3년 "3 년" 세해 "세 해"]
+concept: ~개월 [ ~일개월 ~이개월 ~삼개월 ~사개월 ~오개월 ~육개월 ~칠개월 ~팔개월 ~구개월 ~십개월 ~십일개월 ~십이개월 ]
+concept: ~일개월 [ 달 개월 한달 "한 달" 1달 "1 달" "1개월" "1 개월" 일개월 "일 개월" ]
+concept: ~이개월 [ 두달 "두 달" "2달" "2 달" 2개월 "2 개월" 이개월 "이 개월" ]
+concept: ~삼개월 [ 세달 "세 달" 3달 "3 달" 3개월 "3 개월" 삼개월 "삼 개월"]
+concept: ~사개월 [ 네달 "네 달" 4달 "4 달" 사개월 "사 개월" 4개월 "4 개월" ]
+concept: ~오개월 [ 다섯달 "다섯 달" 5달 "5 달" 오개월 "오 개월" 5개월 "5 개월" ]
+concept: ~육개월 [ 여섯달 "여섯 달" 6달 "6 달" 육개월 "육 개월" 6개월 "6 개월" ]
+concept: ~칠개월 [ 일곱달 "일곱 달" 7달 "7 달" "7개월" "7 개월" 칠개월 "칠 개월" ]
+concept: ~팔개월 [ 여덟달 "여덟 달" "8달" "8 달" 8개월 "8 개월" 팔개월 "팔 개월" ]
+concept: ~구개월 [ 아홉달 "아홉 달" 9달 "9 달" 9개월 "9 개월" 구개월 "구 개월"]
+concept: ~십개월 [ 열달 "열 달" 10달 "10 달" 10개월 "10 개월" 10개월 "10 개월" ]
+concept: ~십일개월 [ 열한달 "열한 달" 11달 "11 달" 11개월 "11 개월" 11개월 "11 개월" ]
+concept: ~십이개월 [ 열두달 "열두 달" 12달 "12 달" 12개월 "12 개월" 12개월 "12 개월" ]
+
+concept: ~member NOUN [ ~최용석 ~장두수 ~조건희 ~김건 ~조수필 ~한연지 ~엄희송 ~유재창 ~김병조 ~김지성 ~서상우 ~송지수 ~조충현 ~김유리 ~정지은 ~박소영 ]
+concept: ~student NOUN [ ~장두수 ~조건희 ~김건 ~조수필 ~한연지 ~엄희송 ~유재창 ~김병조 ~김지성 ~서상우 ~송지수 ~조충현 ~김유리 ~정지은 ~박소영 ]
+concept: ~최용석 NOUN ["Yong-suk Choi" 	"Yongsuk Choi" 		suk		최용석 "최용석 교수님" 교수 교수님 용석]
+concept: ~장두수 NOUN ["Doo-Soo Chang" 	"Chang Doo Soo"		doo		장두수 두수 ]
+concept: ~조건희 NOUN ["Gun-hee Cho" 		"Cho Gun Hee"		hee		조건희 건희 ]
+concept: ~김건  NOUN ["Keun Kim" 			"Kim Keun"			keun	김건 ]
+concept: ~조수필 NOUN ["Su-phil Cho" 		"Cho Su Phil" 		feel	조수필 수필 ]
+concept: ~한연지 NOUN ["Yeon-Jee Han" 		"Yeon Jee Han"		jee		한연지 연지 ]
+concept: ~엄희송 NOUN ["Hee-Song Eom" 		"Hee Song Eom"		song	엄희송 희송 ]
+concept: ~유재창 NOUN ["Jae-Chang Yoo"		"Jae Chang Yoo"		chang	유재창 재창 ]
+concept: ~김병조 NOUN ["Byeong-Jo Kim"		"Byeong Jo Kim"		byeong	김병조 병조 ]
+concept: ~김지성 NOUN ["Ji-Seong Kim"		"Kim Ji Seong"		seong	김지성 지성 ]
+concept: ~서상우 NOUN ["Sang-Woo Seo"		"Sang Woo Seo"		sang	서상우 상우 ]
+concept: ~송지수 NOUN ["Ji-Soo Song"		"Ji Soo Song" 		soo		송지수 지수 ]
+concept: ~조충현 NOUN ["Chung-Hyeon Cho" 	"Chung Hyeon Cho"	chung	조충현 충현 ]
+concept: ~김유리 NOUN ["Yu-Ri Kim" 		"Yu Ri Kim"			yu		김유리 유리 ]
+concept: ~정지은 NOUN ["Ji-Eun Jeong"		"Ji Eun Jeong"		eun		정지은 지은 ]
+concept: ~박소영 NOUN ["So-Young Park"		"So Young Park"		so		박소영 소영 ]
+
+
+
+
+Tablemacro: ^NounPlusPP(^Origin ^pp)
+{
+	loop()
+	{
+		$$element = ^iterator(? member ^Origin)
+		$$tmp = join($$element ^pp)
+		^CreateFact($$tmp member $$element)
+	}
+}
+
+Tablemacro: ^addElement(^Origin)
+{
+	loop()
+	{
+		$$element = ^iterator(? member ^Origin)
+		^query(? member $$element)
+		^CreateFact(@0subject member ^Origin)
+	}
+}
+
+table: ^NounPlusPP(~who)
+야 게 일까 니 였니 에요 입니까 일까요 있어 있니 해 냐
+table: ^addElement()
+~who
+
+table: ^NounPlusPP(~나이)
+은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 에 이가 야 게 일까 니 였니 에요 입니까 일까요 이야
+table: ^addElement()
+~나이
+
+table: ^NounPlusPP(~날씨)
+은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 에 이가 야 게 일까 니 였니 에요 입니까 일까요 이야 어때
+table: ^addElement()
+~날씨
+
+table: ^NounPlusPP(~기분)
+은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 에 이가 야 게 일까 니 였니 에요 입니까 일까요 이야 어때
+table: ^addElement()
+~기분
+
+table: ^NounPlusPP(~최용석)
+은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 에 이가
+table: ^addElement()
+~최용석
+
+table: ^NounPlusPP(~장두수)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~장두수
+
+table: ^NounPlusPP(~조건희)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~조건희
+
+table: ^NounPlusPP(~김건)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~김건
+
+table: ^NounPlusPP(~조수필)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~조수필
+
+table: ^NounPlusPP(~한연지)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~한연지
+
+table: ^NounPlusPP(~엄희송)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~엄희송
+
+table: ^NounPlusPP(~유재창)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~유재창
+
+table: ^NounPlusPP(~김병조)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~김병조
+
+table: ^NounPlusPP(~김지성)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~김지성
+
+table: ^NounPlusPP(~서상우)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~서상우
+
+table: ^NounPlusPP(~송지수)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~송지수
+
+table: ^NounPlusPP(~조충현)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~조충현
+
+table: ^NounPlusPP(~김유리)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~김유리
+
+table: ^NounPlusPP(~정지은)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~정지은
+
+table: ^NounPlusPP(~박소영)
+은 는 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 이야말로 이요 에 가 는 이가
+table: ^addElement()
+~박소영
+
+table: ^NounPlusPP(~연구)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 에 해
+table: ^addElement()
+~연구
+
+table: ^NounPlusPP(~이름)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안 좀
+table: ^addElement()
+~이름
+
+table: ^NounPlusPP(~인공지능)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 좀
+table: ^addElement()
+~인공지능
+
+table: ^NounPlusPP(~연구실)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 좀
+table: ^addElement()
+~인공지능
+
+table: ^NounPlusPP(~전화번호)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 좀
+table: ^addElement()
+~전화번호
+
+##<<
+table: ^NounPlusPP(~시간_단위)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 동안 에
+table: ^addElement()
+~시간_단위
+##>>
+table: ^NounPlusPP(~이메일)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 좀
+table: ^addElement()
+~이메일
+
+table: ^NounPlusPP(~프로젝트)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 만 좀
+table: ^addElement()
+~프로젝트
+
+table: ^NounPlusPP(~논문)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 만 좀
+table: ^addElement()
+~논문
+
+table: ^NounPlusPP(~연구분야)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 좀
+table: ^addElement()
+~연구분야
+
+table: ^NounPlusPP(~입학)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 할 하는 좀
+table: ^addElement()
+~입학
+
+table: ^NounPlusPP(~멤버)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 좀
+table: ^addElement()
+~멤버
+
+table: ^NounPlusPP(~교수)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에
+table: ^addElement()
+~교수
+
+table: ^NounPlusPP(~박사)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에
+table: ^addElement()
+~박사
+
+table: ^NounPlusPP(~석사)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에
+table: ^addElement()
+~석사
+
+
+table: ^NounPlusPP(~일년)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~일년
+
+table: ^NounPlusPP(~이년)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~이년
+
+table: ^NounPlusPP(~삼년)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~삼년
+
+table: ^NounPlusPP(~사년)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~사년
+
+table: ^NounPlusPP(~오년)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~오년
+
+table: ^NounPlusPP(~육년)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~육년
+
+table: ^NounPlusPP(~일개월)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~일개월
+
+table: ^NounPlusPP(~이개월)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~이개월
+
+table: ^NounPlusPP(~삼개월)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~삼개월
+
+table: ^NounPlusPP(~사개월)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~사개월
+
+table: ^NounPlusPP(~오개월)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~오개월
+
+table: ^NounPlusPP(~육개월)
+는 가 를 와 랑 하고 에게 의 보다 도 부터 까지 마저 조차 야말로 요 은 이 을 과 이랑 하고 에게 의 보다 도 부터 까지 마저 조차 이야말로 이요 에 동안
+table: ^addElement()
+~육개월

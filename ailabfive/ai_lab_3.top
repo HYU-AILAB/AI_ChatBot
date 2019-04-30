@@ -1,0 +1,20 @@
+Topic: ~AILAB_publication  keep repeat [~논문  ccc] 
+
+# u: ( ) $topic_used_AILAB_publication = 1
+# 논문
+
+u: (<<~askingmode ~논문 !~국제 !~국내 >>) 연구실에서 나온 최근 논문에 대해 알려드릴까요?
+	a: (~긍정) 가장 최근 논문은 한국정보과학회 "영화 평점 예측을 위한 Word2Vec 기반 협업 필터링"이 있어요.
+	a: (~부정) 아니면 국제 저널/학회, 국내 저널/학회로 나누어서 최근 논문을 알려드릴 수도 있어요. 알려드릴까요?
+		b: (~긍정) 국제 저널/학회, 국내 저널/학회 논문 중 어떤 정보를 원하시나요?
+			c: (~국내) 가장 최근 논문은 한국정보과학회 "영화 평점 예측을 위한 Word2Vec 기반 협업 필터링", "사무환경 서비스 로봇을 위한 온톨로지 기반 지식 인터페이스"가 있어요.
+			c: (~해외) 가장 최근 논문은 "Robot Knowledge Ontology for Personalized Service Robots", "SNS data Visualization for analyzing spatial-temporal distribution of social anxiety"가 있어요.
+		b: (~부정) 그럼 어떤 정보를 알려드릴까요? ^reuse(~INTRODUCTIONS.INTRO2)
+	
+u: (<<~국내 ~논문>>) 가장 최근 국내 논문은 한국정보과학회 "영화 평점 예측을 위한 Word2Vec 기반 협업 필터링", "사무환경 서비스 로봇을 위한 온톨로지 기반 지식 인터페이스"가 있어요.
+u: (<<~국제 ~논문>>) 가장 최근 국제 논문은 "Robot Knowledge Ontology for Personalized Service Robots", "SNS data Visualization for analyzing spatial-temporal distribution of social anxiety"가 있어요.
+
+u: (<< ~askingmode  ~논문 >>) 가장 최근 논문은 한국정보과학회 "영화 평점 예측을 위한 Word2Vec 기반 협업 필터링"이 있어요.
+							
+u: (~askingmode) ^respond( ~answermode_respond )
+u: (~연구실 * 있니) 저는 저희 연구실 홈페이지에 없는 정보는 잘 모른답니다. 혹시 사람의 이름을 말씀하신 거라면, 저희 멤버의 이름을 잘못 말하셨거나 저희 연구실에는 없는 사람의 이름인 것 같습니다.	

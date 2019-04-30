@@ -1,0 +1,158 @@
+outputmacro: ^myfunc()
+	print(OUTPUT_NOCOMMANUMBER)
+
+outputmacro: ^myfunc2()
+
+outputmacro: ^judge_comma(^mode)
+{
+	if(^mode == used)
+	{
+		if($count_comma > 1) {, $count_comma -= 1}
+	}
+	if(^mode == unused)
+	{
+		if($count_comma < 4) {, $count_comma += 1}
+	}
+}
+
+
+outputmacro: ^used_or_not_used_topic_intro()
+{
+	[전에][이미][제가 이미] ^join([말씀드린][말씀드렸던][소개드렸던][알려드린])
+					$count_comma = $topic_used_AILAB_intro + $topic_used_AILAB_project + $topic_used_AILAB_recruit + topic_used_AILAB_publication + $topic_used_AILAB_member
+					if($topic_used_AILAB_intro == 1) { 연구실 소개 ^judge_comma(used) }
+					if($topic_used_AILAB_project == 1) { 프로젝트 ^judge_comma(used) }
+					if($topic_used_AILAB_recruit == 1) { 입학 정보 ^judge_comma(used) }
+					if($topic_used_AILAB_publication == 1) { 논문 ^judge_comma(used) }
+					if($topic_used_AILAB_member == 1) { 멤버 정보 ^judge_comma(used) }
+	[이외에도][외에도]
+					$count_comma = $topic_used_AILAB_intro + $topic_used_AILAB_project + $topic_used_AILAB_recruit + $topic_used_AILAB_publication + $topic_used_AILAB_member
+					if($topic_used_AILAB_intro != 1) { 연구실 소개 ^judge_comma(unused) }
+					if($topic_used_AILAB_project != 1) { 프로젝트 ^judge_comma(unused) }
+					if($topic_used_AILAB_recruit != 1) { 입학 정보 ^judge_comma(unused) }
+					if($topic_used_AILAB_publication != 1) { 논문 ^judge_comma(unused) }
+					if($topic_used_AILAB_member != 1) { 멤버 정보 ^judge_comma(unused) }
+	에 [대해][대해서][대하여] ^join([설명해][소개해][알려])드릴 수 [있어요][있습니다].
+}
+
+
+outputmacro: ^ask_another_question()
+{
+	[어떤 것을 알려 드릴까요?]
+	[어떤 것이 궁금하세요?]
+	[다른 질문은 없으신가요?]
+	[무엇을 더 알려 드릴까요?]
+	[더 궁금하신 건 없으신가요?]
+	[무엇을 더 알고 싶으신가요?]
+}
+
+
+Topic: ~AILAB_intro  keep repeat [ !~member ~연구 ~연구분야 ~연구실 ~위치 ~웹 ]
+
+
+# lab, 연구 분야 소개
+
+u: (<< ~askingmode ~연구 !~member >>) ^reuse(DETAIL_RESEARCH_FIELD)
+u: (<< ~연구 >>) ^reuse(DETAIL_RESEARCH_FIELD)
+u: (<< ~askingmode ~인공지능 >>) ^reuse(AI1)
+u: (<< ~askingmode 지능* >>) [인공 지능에 대해서 궁금하신 건가요?][인공지능이 궁금하신 거죠?][어떤 인공지능을 연구하냐구요?] ^reuse(AI1)
+u: (<< ~askingmode [정보검색* 검색* 정보시스템분야*] >>) ^reuse(IRS1)
+u: (<< ~askingmode 융합* >>) ^reuse(CF1)
+
+u: (<< ~askingmode ~위치 >>) 우리 연구실은 한양대학교 IT/BT관 604-2호에 위치해 있어요.
+u: (<< ~askingmode ~웹 >>) 우리 연구실 [홈페이지][웹페이지] ^join([][주소는]) ai.hanyang.ac.kr 입니다.
+
+
+#! Why are not you introducing the lab?
+#! plz tell me about your lab.
+u: ( !~member !어떻게 ~연구실 * [소개 소개* 설명 설명* 안내 안내*] )
+	[ 연구실에 대한 간략한 소개를 원하시나요? 아니면 원하시는 다른 정보가 있으신가요? ]
+	[ 연구실 소개만 해드리면 될까요? ]
+	[ 한번에 모두 소개해 드리기에는 양이 많아서 간단한 연구실 소개 먼저 해드릴게요. 괜찮으신가요? ]
+
+	a: ( !~member [간단* 간략* 소개* 안내* ~긍정] ) [이][저희] 연구실은 한양대학교 컴퓨터소프트웨어학과 인공지능 연구실입니다.
+		[본][이][저희][인공지능][AI] 연구실에서는 컴퓨터가 인간의 지능적인 행위를 모방하여 수행하는 방법을 연구하는 인공지능 분야와 웹과 같은 대규모 컴퓨팅 환경에서 원하는 정보를 효과적으로 검색해주는 정보검색시스템 분야를 포함한 다양한 분야의 최신 연구를 [진행하고][수행하고][진행 중에][수행 중에] 있습니다.
+		[더 자세한 정보를 알려드릴까요?]
+		[저희 연구실 연구분야도 함께 알려드릴까요?]
+		[저희 연구실의 연구 분야에 대해서도 궁금하신가요?]
+
+		b: DETAIL_RESEARCH_FIELD(<<~긍정 !~member>>)
+
+			if($Check_DETAIL_RESEARCH_FIELD == 0)
+			{
+				# u:(!~members)
+				# ^respond(~Chooseperson)
+				# if($target ? ~student)
+				# {
+					[본][저희][인공지능][AI] 연구실에서는 인공지능 분야, 정보검색시스템 분야, 융합 분야
+					[에 대한 연구를 진행하고 있습니다]
+					[로 크게 나누어 연구를 진행하고 있습니다]
+					[를 연구중입니다]
+					.
+				# }
+				# else
+				# {
+				#	^reuse(~Member_Info.research_one)
+				# }
+			}
+			else
+			{
+				[본][저희][인공지능][AI] 연구실에서는 [이미][전에] ^join([설명드린][말씀드린][소개 했던])
+						$count_comma = $Check_AI1 + $Check_IRS1 + $Check_CF1
+						if($Check_AI1 == 1) { 인공지능 분야 ^judge_comma(used) }
+						if($Check_IRS1 == 1) { 정보검색시스템 분야 ^judge_comma(used) }
+						if($Check_CF1 == 1) { 융합 분야 ^judge_comma(used) }
+						if($count_comma != 0) {[이외에도][외에도][와 함께]}
+						$count_comma = $Check_AI1 + $Check_IRS1 + $Check_CF1 + 2
+						if($Check_AI1 != 1) { 인공지능 분야 ^judge_comma(unused) }
+						if($Check_IRS1 != 1) { 정보검색시스템 분야 ^judge_comma(unused) }
+						if($Check_CF1 != 1) { 융합 분야 ^judge_comma(unused) }
+				[등을 연구하고 있습니다]
+				[에 대한 연구를 진행하고 있습니다]
+				[로 크게 나누어 연구를 진행하고 있습니다]
+				[를 연구중입니다]
+				.
+			}
+			[어떤 분야에 대하여 알려드릴까요?]
+			[자세하게 알고 싶은 분야가 있으신가요?]
+			[혹시 관심있는 분야가 있으신가요?]
+			[어떤 분야에 관심이 있으신가요?]
+			[더 자세히 알고 싶은 분야가 있으시면 말씀해 주세요]
+
+			c: AI1(!안 [~인공지능 지능*] )
+				$Check_AI1 = 1 			$Check_DETAIL_RESEARCH_FIELD += 1
+				인공지능 분야 [중][중에서][중에서도] 인공신경망응용, 온톨로지기반지식관리시스템, 자연어기반 대화생성시스템, 패턴인식 및 매칭, 게임알고리즘 [등에 대해][에 대해][등을][을] ^join([중점적으로 다루고 있습니다][다루고 있습니다][연구하고 있습니다]).
+				[다른 연구분야에 대해서도 알고 싶으신가요?]
+				[더 알고 싶은 연구분야가 있으신가요?]
+				[다른 연구분야도 알려드릴까요?]
+				[다른 연구분야에도 관심이 있으신가요?]
+					d: (~부정) 그럼 ^ask_another_question() ^reuse(~INTRODUCTIONS.INTRO2)
+					d: ([~긍정 나머지 어떤]) ^reuse(DETAIL_RESEARCH_FIELD)
+			c: IRS1(!안 [정보검색* 검색*])
+				$Check_IRS1 = 1			$Check_DETAIL_RESEARCH_FIELD += 1
+				정보검색시스템 분야 중 지능형검색 및 협력추천엔진, 질의응답시스템, 텍스트 마이닝 및 SNS 데이터 분석/시각화, 대규모 문헌정보자동추출 [등에 대해][에 대해][등을][을] ^join([중점적으로 다루고 있습니다][다루고 있습니다][연구하고 있습니다]).
+				[다른 연구분야에 대해서도 알고 싶으신가요?]
+				[더 알고 싶은 연구분야가 있으신가요?]
+				[다른 연구분야도 알려드릴까요?]
+				[다른 연구분야에도 관심이 있으신가요?]
+					d: (~부정) 그럼 ^ask_another_question() ^reuse(~INTRODUCTIONS.INTRO2)
+					d: ([~긍정 나머지 나머지* 어떤]) ^reuse(DETAIL_RESEARCH_FIELD)
+			c: CF1(!안 융합*)
+				$Check_CF1 = 1			$Check_DETAIL_RESEARCH_FIELD += 1
+				융합 분야는 로봇 지능, 스마트 앱, 게임기반학습 및 게임지능, e-러닝 및 지능형튜토링시스템 [등에 대해][에 대해][등을][을] ^join([중점적으로 다루고 있습니다][다루고 있습니다][연구하고 있습니다]).
+				[다른 연구분야에 대해서도 알고 싶으신가요?]
+				[더 알고 싶은 연구분야가 있으신가요?]
+				[다른 연구분야도 알려드릴까요?]
+				[다른 연구분야에도 관심이 있으신가요?]
+					d: (~부정) 그럼 ^ask_another_question() ^reuse(~INTRODUCTIONS.INTRO2)
+					d: ([~긍정 나머지 어떤]) ^reuse(DETAIL_RESEARCH_FIELD)
+
+		b: (~부정) 그럼 ^ask_another_question() ^reuse(~INTRODUCTIONS.INTRO2)
+
+	a: (~부정) 그럼 ^ask_another_question() ^reuse(~INTRODUCTIONS.INTRO2)
+
+u: (<<~연구실 !~연구>>) [연구실의 모든 것을 알지는 못해요][저도 잘 모르겠어요][그건 모르겠네요]. 연구실의 연구분야와 간략한 소개 정도는 드릴 수 있어요.
+
+u: (~askingmode) ^respond( ~answermode_respond )
+
+u: (~연구실 * 있니) 저는 저희 연구실 홈페이지에 없는 정보는 잘 모른답니다. 혹시 사람의 이름을 말씀하신 거라면, 저희 멤버의 이름을 잘못 말하셨거나 저희 연구실에는 없는 사람의 이름인 것 같습니다.

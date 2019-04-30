@@ -1,0 +1,22 @@
+# $target 변수를 멤버 이름의 기본형으로 변환
+
+ Topic: ~Chooseperson keep repeat nostay()
+  
+ u: ( ~최용석 ) $target= 최용석  
+ u: ( ~장두수 ) $target= 장두수
+ u: ( ~조건희 ) $target= 조건희
+ u:	( ~김건  ) $target= 김건
+ u:	( ~조수필 ) $target= 조수필
+ u:	( ~한연지 ) $target= 한연지
+ u: ( ~엄희송 ) $target= 엄희송
+ u: ( ~유재창 ) $target= 유재창
+ u: ( ~김병조 ) $target= 김병조
+ u: ( ~김지성 ) $target= 김지성
+ u: ( ~서상우 ) $target= 서상우
+ u: ( ~송지수 ) $target= 송지수
+ u: ( ~조충현 ) $target= 조충현
+ u: ( ~김유리 ) $target= 김유리
+ u: ( ~정지은 ) $target= 정지은
+ u: ( ~박소영 ) $target= 박소영
+ 
+ 

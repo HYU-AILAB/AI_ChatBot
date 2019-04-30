@@ -1,0 +1,38 @@
+topic: ~quibble_ALL system ()  
+
+# sentence classes for quibbling
+
+u: ([never not ] ) ^respond(~quibble_not ) 
+
+u: (who) ^respond(~quibble_who ) 
+
+u: (what ) ^respond(~quibble_what ) 
+
+u: ([언제 언제* *때 때 때* *면] ) ^respond(~quibble_when ) 
+
+u: (where ) ^respond(~quibble_where ) 
+
+u: (~why) ^respond(~quibble_why ) 
+
+u: (how [many much] ) ^respond(~quibble_howmuch ) 
+
+u: (![much many] how) ^respond(~quibble_how ) 
+
+u: ([because cause ] ) ^respond(~quibble_because ) 
+
+u: (will ) ^respond(~quibble_will ) 
+
+?: ([내 내* 나 나*] * [위치 위치* 어디 어디* 어딨*]) 제가 지금 컴퓨터 안에 있어서 그런지 잘 안 보여요.
+?: ([기억나니 "기억하고 있니"] ) 치매에 걸렸던 거 까지는 기억이 나는데요.
+u: ([들리니 "듣고 있니"]) 아아아아아아무것도 안들린다아아아아아나는 안들린다아아아아아 
+u: (수 있*) ^respond(~quibble_can ) 
+u: (물어봐도 되니) ^respond(~quibble_can ) 
+u: (*도 [되* 될*]) ^respond(~quibble_can ) 
+
+u: (do ) ^respond(~quibble_do ) 
+
+
+# honest responses based on discourse act of user
+
+u: () ^respond(~HONEST_RESPONSE ) 
+

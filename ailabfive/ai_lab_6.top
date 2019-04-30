@@ -1,0 +1,32 @@
+Topic: ~answermode_respond keep repeat nostay()
+
+?: ( !내 [넌 너는] 이름* [어떻게* 뭐야 뭐니 뭐야* 뭔데* 뭐니*]) [제 이름은][저는] aibot 입니다.
+u: (!~member !~멤버 << [너* ~연구실] [어디* 위치* 소속*]>>) 서울 성동구 한양대학교, ITBT관 6층에 인공지능 연구실이 있어요. 저도 여기에 있답니다.
+
+u: (<< {~연구실} {~askingmode} ~위치 >>) 우리 연구실은 한양대학교 IT/BT관 6층에 위치해 있어요.
+u: (<< {~연구실} {~askingmode} ~웹 >>) 우리 연구실 [홈페이지][웹페이지] ^join([][주소])는 ai.hanyang.ac.kr 입니다.
+
+u: ( << [~member ~멤버] ~연구>> )
+$topic_used_AILAB_member = 1	^respond(~AILAB_member)
+
+u: ( [ ~member ~전화번호 ~멤버 이름* ~이메일 과정* ~박사 ~석사 교수*] )
+$topic_used_AILAB_member = 1 	^respond(~AILAB_member)
+
+u: (~프로젝트)
+$topic_used_AILAB_project = 1	^respond(~AILAB_project)
+
+u: ([~입학 ~우대])
+$topic_used_AILAB_recruit = 1	^respond(~AILAB_recruit)
+
+u: (~논문)
+$topic_used_AILAB_publication = 1	^respond(~AILAB_publication)
+
+u: ([~연구 ~연구실 ~연구분야])
+$topic_used_AILAB_intro = 1		^respond(~AILAB_intro)
+
+u: ([~날씨 ~기분])
+^respond(~AILAB_other)
+
+u: ASKINGMODE_DEFAULT(<<!다시 ~askingmode>>) [저는][] ^join([저희][AI][본][인공지능]) 연구실 ^join(홈페이지[, ai.hanyang.ac.kr][]) ^join([에 있는][의][에 설명된]) ^join(연구실 소개[ 및][,]) ^join([연구분야, 프로젝트, 논문, 입학 정보, 멤버 정보에][연구실 구성원에 대한 소개, 프로젝트 및 연구실 연구분야에 대한 정보, 입학 관련 정보 및 간략한 연구실 소개에]) ^join([대해서][대하여][대해서만]) [설명][알려][말씀]드릴 수 [있습니다][있답니다][있다는 것을 기억해 주세요].
+
+u: (~연구실 * 있니) 저는 우리 연구실 홈페이지에 있는 정보만 배웠어요. 사람 이름을 말씀하신 거라면, 이름을 잘못 말하셨거나 연구실에 없는 사람의 이름인 것 같아요.

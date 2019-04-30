@@ -1,0 +1,137 @@
+outputmacro: ^membertempo(^kk)							# temporary function to select concept title of input name.
+{
+	if(^kk ? ~최용석) 			{최용석}
+	else if(^kk ? ~장두수 ) 	{장두수}
+	else if(^kk ? ~조건희 ) 	{조건희}
+	else if(^kk ? ~김건 ) 	{김건}
+	else if(^kk ? ~조수필 ) 	{조수필}
+	else if(^kk ? ~한연지 )	{한연지}
+	else if(^kk ? ~엄희송 ) 	{엄희송}
+	else if(^kk ? ~유재창 ) 	{유재창}
+	else if(^kk ? ~김병조 ) 	{김병조}
+	else if(^kk ? ~김지성 ) 	{김지성}
+	else if(^kk ? ~서상우 ) 	{서상우}
+	else if(^kk ? ~송지수 ) 	{송지수}
+	else if(^kk ? ~조충현 ) 	{조충현}
+	else if(^kk ? ~김유리 )	{김유리}
+	else if(^kk ? ~정지은 )	{정지은}
+	else if(^kk ? ~박소영 )	{박소영}
+	else {wrong_name}
+}
+
+Topic: ~Member_Info keep repeat nostay()
+
+u: email_one(_~member ~이메일) ^respond(~Chooseperson)
+	if($target ? ~student) {^query(direct_sv $target emaillist ?) $target [학생][연구원]의 [이메일 주소는][이메일은][메일 주소는] @0object 입니다.}
+	else {^query(direct_sv $target emaillist ?) $target 지도교수님의 [이메일 주소는][이메일은][메일 주소는] @0object 입니다.}
+
+u: course_one(_~member ~과정) ^respond(~Chooseperson)
+	if($target ? ~student) {^query(direct_sv $target courselist ?) $target [학생][연구원]은 @0object 입니다.}
+	else {$target 교수님은 지도교수님 입니다. 학생들의 과정에 대해서만 답할 수 있어요.}
+
+u: course_who(_~member ~who) ^respond(~Chooseperson)
+	if($target ? ~student) {
+		^query(direct_sv $target courselist ?) $target [학생은][연구원은] @0object 이며,
+		^query(direct_sv $target researchlist ?) @0object 분야의 연구를 진행하고 있습니다.
+	}
+	else { $target 교수님은 우리 AILAB의 지도교수님 입니다.}
+
+u: research_one(_~member [연구분야 "연구 분야" 관심분야 "관심 분야" 분야]) ^respond(~Chooseperson)
+	if($target ? ~student) {^query(direct_sv $target researchlist ?) $target [학생][연구원]의 연구분야는 @0object 입니다.}
+	else {$target 교수님의 연구분야는 Artificial Intelligence입니다.}
+
+u: phone_one(_~member ~전화번호) ^respond(~Chooseperson)
+	if($target ? ~student) {$target[학생][연구원]의 개인전화번호는 개인 정보라서 알려드릴 수 없어요. 연구실 대표 번호를 알려드릴까요?}
+	else { $target 교수님의 개인전화번호는 개인 정보라서 알려드릴 수 없어요. 연구실 대표 번호를 알려드릴까요?}
+		a: LAB_PHONE_NUM(~긍정) [우리][본][인공지능][AI][] ^join(연구실[][의]) ^join([대표 번호][전화번호][번호]는) 02-2220-4139입니다.
+		a: (~부정) ^reuse(~ai_lab.ask_another_question)
+
+
+u: project_one(_~member ~프로젝트) ^respond(~Chooseperson)
+	if($target ? ~student) {
+		$target [학생][연구원]은 현재,
+		^query(direct_sv $target projectlist ?) @0object [][프로젝트]를 진행중이에요.
+	}
+	else {
+		$target 교수님께서는 현재,
+		^query(direct_sv $target projectlist ?) @0object [][프로젝트]를 총괄하고 계십니다.
+	}
+
+
+Table: ~emaillist(^membername ^memberemail)
+createfact(^membername emaillist ^memberemail)
+Data:
+최용석 cys@hanyang.ac.kr
+장두수 tim0225@hanyang.ac.kr
+조건희 freebeing1@naver.com
+김건 doublek375@hanyang.ac.kr
+조수필 jessay@hanyang.ac.kr
+한연지 yeon9891@hanyang.ac.kr
+엄희송 heesong1990@gmail.com
+유재창 3147@hanyang.ac.kr
+김병조 bjbj8083@gmail.com
+김지성 intelli8786@hanyang.ac.kr
+서상우 ssw1591@hanyang.ac.kr
+송지수 autorsong@gmail.com
+조충현 johnart1997@gmail.com
+김유리 yurikim@hanyang.ac.kr
+정지은 genie7@hanyang.ac.kr
+박소영 veryyoung@hanyang.ac.kr
+
+Table: ~researchlist(^membername ^memberresearch)
+createfact(^membername researchlist ^memberresearch)
+Data:
+장두수 Ontology
+조건희 Vision
+김건 Vision
+조수필 NLP
+한연지 Ontology
+엄희송 Vision
+유재창 Vision
+김병조 Vision
+김지성 Vision
+서상우 NLP
+송지수 NLP
+조충현 NLP
+김유리 NLP
+정지은 Ontology
+박소영 NLP
+
+Table: ~courselist(^membername ^membercourse)
+createfact(^membername courselist ^membercourse)
+Data:
+최용석 지도교수
+장두수 박사과정
+조건희 박사과정
+김건 박사과정
+조수필 석사과정
+한연지 석사과정
+엄희송 석사과정
+유재창 석사과정
+김병조 석사과정
+김지성 석사과정
+서상우 석사과정
+송지수 석사과정
+조충현 석사과정
+김유리 석사과정
+정지은 석사과정
+박소영 석사과정
+
+Table: ~projectlist(^membername ^memberproject)
+createfact(^membername projectlist ^memberproject)
+Data:
+최용석 "로봇지능, 인공지능창작, 사회적 불안 분석, 지능형 진동진단"
+장두수 로봇지능
+조건희 로봇지능
+김건 로봇지능
+한연지 인공지능창작
+엄희송 "지능형 진동진단"
+유재창 "지능형 진동진단"
+김병조 인공지능창작
+김지성 로봇지능
+서상우 "사회적 불안 분석"
+송지수 "사회적 불안 분석"
+조충현 "사회적 불안 분석"
+김유리 로봇지능
+정지은 인공지능창작
+박소영 "사회적 불안 분석"
