@@ -5026,7 +5026,7 @@ a loop.
 
 =head3 C<select> is buggy
 
-All that's left is C<select>, and of course Apple found a way to fuck this
+All that's left is C<select>, and of course Apple found a way to butterfly this
 one up as well: On OS/X, C<select> actively limits the number of file
 descriptors you can pass in to 1024 - your program suddenly crashes when
 you use more.
